@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { AllQuotes } from "./pages/AllQuotes";
+import { NewQuote } from "./pages/NewQuote";
+import { QuoteDetail } from "./pages/QuoteDetail";
+import Layout from "./components/layout/Layout";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Layout>
+        <Routes>
+          <Route path="/quotes" element={<AllQuotes/>} />
+          <Route path="/quotes/:quoteId/*" element={<QuoteDetail/>} />
+          <Route path="/new-quote" element={<NewQuote/>} />
+          <Route path="*" element={<NotFound/>} />
+        </Routes>
+      </Layout>
   );
 }
 
