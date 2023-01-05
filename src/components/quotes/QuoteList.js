@@ -17,7 +17,6 @@ const QuoteList = ({ quotes }) => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const queryParams = new URLSearchParams(location.search);
 
@@ -26,8 +25,17 @@ const QuoteList = ({ quotes }) => {
   const sortedQuotes = sortQuotes(quotes, isSortingAscending);
 
   const changeSortingHandler = () => {
-    navigate("/quotes?sort=" + (isSortingAscending ? "desc" : "asc"));
+    navigate({
+      pathname: location.pathname,
+      search: `?sort=${(isSortingAscending ? 'desc' : 'asc')}`
+    });
   };
+
+  // const changeSortingHandler = () => {
+  //   navigate(`${location.pathname}?sort=${(isSortingAscending ? 'desc' : 'asc')}`);
+  // };
+
+
 
   return (
     <>
