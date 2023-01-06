@@ -5,7 +5,7 @@ import Comments from "../components/comments/Comments";
 import HighlighedQuote from "../components/quotes/HighlightedQuote";
 import LoadingSpinner from '../components/UI/LoadingSpinner';
 
-import useHttp from "../components/hooks/use-http";
+import useHttp from "../hooks/use-http";
 import { getSingleQuote } from "../components/lib/api";
 
 export const QuoteDetail = () => {

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import useHttp from "../components/hooks/use-http";
+import useHttp from "../hooks/use-http";
 import { addQuote } from "../components/lib/api";
 import QuoteForm from '../components/quotes/QuoteForm'
 
